@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="shape_resource" load_steps=3 format=3 uid="uid://17rffb3ckd8c"]
+
+[ext_resource type="Script" path="res://main/game/shape_resource.gd" id="1_0drta"]
+[ext_resource type="Texture2D" uid="uid://506baopx1hrf" path="res://icon.svg" id="2_xi1s5"]
+
+[resource]
+script = ExtResource("1_0drta")
+shape_texture = ExtResource("2_xi1s5")

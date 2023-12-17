@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="shape_holder" load_steps=5 format=3 uid="uid://4ski046050lb"]
+
+[ext_resource type="Script" path="res://main/game/Shape_holder.gd" id="1_wl5tr"]
+[ext_resource type="Script" path="res://main/game/shape_resource.gd" id="2_bav7y"]
+[ext_resource type="Texture2D" uid="uid://506baopx1hrf" path="res://icon.svg" id="3_fah5d"]
+
+[sub_resource type="Resource" id="Resource_gdtsx"]
+script = ExtResource("2_bav7y")
+shape_texture = ExtResource("3_fah5d")
+
+[resource]
+script = ExtResource("1_wl5tr")
+shapes = Array[ExtResource("2_bav7y")]([SubResource("Resource_gdtsx")])

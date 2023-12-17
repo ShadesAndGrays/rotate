@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://co4jn4c2qbnfg"]
+
+[ext_resource type="PackedScene" uid="uid://5hth2aisa07f" path="res://main/UI/UI.tscn" id="1_3npl6"]
+[ext_resource type="PackedScene" uid="uid://d4mywnevcdugc" path="res://main/background/background.tscn" id="1_eoaal"]
+[ext_resource type="Script" path="res://main/game/Game_scene.gd" id="2_n6o7v"]
+[ext_resource type="Resource" uid="uid://4ski046050lb" path="res://main/game/Shape_holder.tres" id="3_oxig0"]
+
+[node name="Game" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="Control" parent="UI" instance=ExtResource("1_3npl6")]
+
+[node name="Game_scene" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Game_scene" type="Node2D" parent="Game_scene" node_paths=PackedStringArray("sprite1", "sprite2")]
+script = ExtResource("2_n6o7v")
+Shape_holder = ExtResource("3_oxig0")
+sprite1 = NodePath("Left_sprite")
+sprite2 = NodePath("Right_sprite")
+
+[node name="Left_sprite" type="Sprite2D" parent="Game_scene/Game_scene"]
+position = Vector2(250, 308)
+
+[node name="Right_sprite" type="Sprite2D" parent="Game_scene/Game_scene"]
+position = Vector2(452, 308)
+
+[node name="background" type="CanvasLayer" parent="."]
+
+[node name="Background" parent="background" instance=ExtResource("1_eoaal")]
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="UI/Control/Button" to="Game_scene/Game_scene" method="_on_left_button_pressed"]
+[connection signal="pressed" from="UI/Control/Button2" to="Game_scene/Game_scene" method="_on_right_button_2_pressed"]
+
+[editable path="UI/Control"]
