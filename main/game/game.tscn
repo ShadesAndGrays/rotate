@@ -34,5 +34,6 @@ metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="UI/Control/Button" to="Game_scene/Game_scene" method="_on_left_button_pressed"]
 [connection signal="pressed" from="UI/Control/Button2" to="Game_scene/Game_scene" method="_on_right_button_2_pressed"]
+[connection signal="pressed" from="UI/Control/Button3" to="Game_scene/Game_scene" method="_on_button_3_pressed"]
 
 [editable path="UI/Control"]
